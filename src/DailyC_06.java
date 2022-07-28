@@ -5,6 +5,10 @@ public class DailyC_06 {
         String result = "";
 
         for(int i = 0; i < words.length; i++) {
+            // handling empty String with spaces
+            if(words[i].equals(""))
+                continue;
+
             // String with the capitalised first letter of each word
             words[i] = String.valueOf(words[i].charAt(0)).toUpperCase()
                     + words[i].substring(1);
@@ -16,5 +20,6 @@ public class DailyC_06 {
 
     public static void main(String[] args) {
         System.out.println(letterCapitalize("what a lovely day!"));
+        System.out.println(letterCapitalize("what  a  lovely day!"));
     }
 }
